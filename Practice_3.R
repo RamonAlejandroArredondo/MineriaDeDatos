@@ -4,7 +4,7 @@ expenses <- c(12051.82, 5695.07, 12319.20, 12089.72, 8658.57, 840.20, 3285.73, 5
 
 #Solution
 #Calculate Profit As The Differences Between Revenue And Expenses
-profit <- _ - _
+profit <- revenue - expenses
 profit
 
 #Calculate Tax As 30% Of Profit And Round To 2 Decimal Points

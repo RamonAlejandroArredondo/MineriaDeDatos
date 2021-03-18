@@ -36,3 +36,45 @@ my_fun1 <- function(x, y) {           # R function with return
 # 10.Take a random sample or permutation of a data object.
 sample(my_vec)          # Random reordering
 # 1 3 4 2 5
+
+
+# 11 allows you to place names in the spaces of the vector
+
+  vector  <- c ( 1 , 2 , 3 )
+  nombres = ( vector ) <- c ( " uno " , " dos " , " tres " )  
+  vector
+  
+# 12  find and call an object
+get ( " vector " )     
+
+# 13 find and call a data object and allow to specify an action in case the object is not found
+get0 ( " vector " , ifnotfound  =  " no disponible " )
+
+
+# 14 returns the first value that was entered in the vector
+first ( vector ) 
+
+
+# 15 returns the last value that was entered in the vector 
+last ( vector )  
+
+# 16 creates an expression that is stored in the assigned variable
+x1  <- exp
+ression ( 2 ^ 3 )  
+x1 
+
+# 17 check the data class
+class ( x1 )  
+
+# 18 evaluates the saved expression
+eval ( x1 ) 
+
+# 19 performs a graphical visualization of a data set
+plot()
+
+# 20  create a graph with the density of x
+
+plot (densidad ( x ))   
+
+
+

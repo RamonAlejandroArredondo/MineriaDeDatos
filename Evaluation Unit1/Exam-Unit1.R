@@ -20,3 +20,28 @@ pais
 mydf.1960 <- data.frame( Code= Country_Code, Life.Expectancy.1960 = Life_Expectancy_At_Birth_1960)
 head(mydf.1960)
 mydf.1960
+
+#margin the data frames 
+head(stats1)
+
+merged.1960 <- merge(year.1960, mydf.1960,  by.x = "Country.Code", by.y = "Code")
+head(merged.1960)
+merged.1960
+
+#calling the library necessary to plot the data
+library(ggplot2)
+
+#Visualizing the data in a plot 
+qplot(data = merged.1960, x =Fertility.Rate , y = Life.Expectancy.1960,
+      color = Region, size=I(3), shape=I(19), alpha =I(.4), 
+      main = "Fertility for Life Expectancy group by Region 1960")
+
+ggplot(merged.1960, aes(x = Fertility.Rate, y = Life.Expectancy.1960, 
+                        color=Country.Name)) +
+  geom_point(aes(color = factor(Country.Name))) + 
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)
+
+ggplot(merged.1960, aes(x = Fertility.Rate, y = Life.Expectancy.1960, 
+                        color=Region)) +
+  geom_point(aes(color = factor(Region))) + 
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)

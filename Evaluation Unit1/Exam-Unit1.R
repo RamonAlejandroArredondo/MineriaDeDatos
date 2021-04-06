@@ -48,17 +48,26 @@ ggplot(merged.1960, aes(x = Fertility.Rate, y = Life.Expectancy.1960,
 
 # 2013 year
 #We split the data to years 
-año.2013=years[[2]]
-año.2013
+year.2013=years[[2]]
+year.2013
+
 #data frame for the new vectors
 mydf2 <- data.frame( Code= Country_Code, 
                      Life.Expectancy.2013 = Life_Expectancy_At_Birth_2013)
 head(mydf2)
 mydf2
+
 #data merged
-merged_2013 <- merge(año.2013, mydf2,  by.x = "Country.Code", by.y = "Code")
+merged_2013 <- merge(year.2013, mydf2,  by.x = "Country.Code", by.y = "Code")
 head(merged_2013)
 merged_2013
 
+#Visualizing the data in plot
+qplot(data = merged_2013, x =Fertility.Rate , y = Life.Expectancy.2013,
+      color = Region, size=I(3), shape=I(19), alpha =I(.4), 
+      main = "Fertility for Life Expectancy group by Region 2013")
 
-
+#Visualizing the data in plot group by country
+qplot(data = merged_2013, x =Fertility.Rate , y = Life.Expectancy.2013,
+      color = Country.Name, size=I(3), shape=I(19), alpha =I(.4), 
+      main = "Fertility for Life Expectancy group by Country 2013")

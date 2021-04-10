@@ -99,7 +99,7 @@ sample(my_vec)          # Random reordering
   nombres = ( vector ) <- c ( " uno " , " dos " , " tres " )  
   vector
   ```
-# 12  find and call an object
+ 12  find and call an object
 
 ```R
 get ( " vector " )     
@@ -138,7 +138,7 @@ plot()
 plot (densidad ( x )) 
 ``` 
 
-##Exam
+## Exam
 
 ### El Banco Mundial quedó muy impresionado con su entrega en la asignación anterior y tienen un nuevo proyecto para usted.
 

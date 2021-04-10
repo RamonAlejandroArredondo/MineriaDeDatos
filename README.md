@@ -39,47 +39,47 @@ if((5%2)==0) println("no es primo") else println("es primo")
 
 
 ## Practice 2
-# 1.Helps delete specific data object in R
+ 1.Helps delete specific data object in R
 ```R
 x <- 5 #Create a constant with value
 rm(x) #function 
 ```
-# 2.Computes the sum of each column of a numeric data frame, matrix or array.
+ 2.Computes the sum of each column of a numeric data frame, matrix or array.
 ```R
 colSums(data)
 ```
-# 3.Helps us get the mean from all the columns
+ 3.Helps us get the mean from all the columns
 ```R
 colMeans(data)
 # 9.666667 14.333333  6.666667 12.000000 -- Example
 ```
 
-# 4.Set a random seed of numbers
+ 4.Set a random seed of numbers
 ```R
 set.seed(873465) #Random number selected, could be anything 
 rpois(5, 3) #Generate random numbers with seed
 ``` 
 
-# 5.Convert character strings to Date class.
+ 5.Convert character strings to Date class.
 ```R
 my_date_new1 <- as.Date(my_date)    # Convert character string
 my_date_new1                        # Print new date
 # "2020-10-05"
 ```
-# 6.Combine vectors, matrices and/or data frames by column.
+ 6.Combine vectors, matrices and/or data frames by column.
 ```R
 cbind(my_data, new_column)
 
 ```
-# 7.Return the length of data objects such as vectors or lists.
+ 7.Return the length of data objects such as vectors or lists.
 ```R
 length(x)
 ```
-# 8.When input it will always return an Integer number
+ 8.When input it will always return an Integer number
 ```R
 floor(7.456)
 ```
-# 9.Return output of user-defined R function.
+ 9.Return output of user-defined R function.
 ```R
 my_fun1 <- function(x, y) {           # R function with return
   z <- x + y
@@ -87,13 +87,13 @@ my_fun1 <- function(x, y) {           # R function with return
 }
 ```
 
-# 10.Take a random sample or permutation of a data object.
+ 10.Take a random sample or permutation of a data object.
 ```R
 sample(my_vec)          # Random reordering
 # 1 3 4 2 5
 ```
 
-# 11 allows you to place names in the spaces of the vector
+ 11 allows you to place names in the spaces of the vector
 ```R
   vector  <- c ( 1 , 2 , 3 )
   nombres = ( vector ) <- c ( " uno " , " dos " , " tres " )  
@@ -107,12 +107,12 @@ get ( " vector " )
 
 
 
-# 13 find and call a data object and allow to specify an action in case the object is not found
+13 find and call a data object and allow to specify an action in case the object is not found
 ```R
 get0 ( " vector " , ifnotfound  =  " no disponible " )
 ```
 
-# 14 returns the first value that was entered in the vector
+14 returns the first value that was entered in the vector
 ```R
 first ( vector ) 
 # returns the last value that was entered in the vector 
@@ -123,7 +123,7 @@ ression ( 2 ^ 3 )
 x1 
 ```
 
-# 15 check the data class
+15 check the data class
 ```R
 class ( x1 )  
 

@@ -9,6 +9,7 @@ Table of contents
 
 - [Practice 1](#practice-1)
 - [Practice 2](#practice-2)
+- [Practice 3](#practice-3)
 - [Exam](#Exam)
 
 <div id='pr1' />

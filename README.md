@@ -5,7 +5,7 @@
 * [practice2](https://github.com/RamonAlejandroArredondo/MineriaDeDatos/blob/Unit1/Practice_2.R) 
 * [practice3](https://github.com/RamonAlejandroArredondo/MineriaDeDatos/blob/Unit1/Practice_3.R) 
 * [practice5](https://github.com/RamonAlejandroArredondo/MineriaDeDatos/blob/Unit1/Practice_5.R) 
-* [Exam](https://github.com/RamonAlejandroArredondo/MineriaDeDatos/blob/Unit1/Practice_3.R) 
+* [Exam](https://github.com/RamonAlejandroArredondo/MineriaDeDatos/blob/Unit1/Evaluation%20Unit1/Exam-Unit1.R) 
 
 ## Exam Unit 1
 

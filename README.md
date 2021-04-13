@@ -225,6 +225,48 @@ best.month
 worst.month
 ```
 
+#Practice 5 
+```R
+stats <- read.csv("Demographic-Data.csv")
+is.data.frame(stats)
+```
+#Filter countries by Low income
+```R
+stats[stats$Income.Group == "Low income",]
+```
+#Filter countries by Lower middle income
+```R
+stats[stats$Income.Group == "Lower middle income",]
+```
+#Filter countries by Upper middle income
+```R
+stats[stats$Income.Group == "Upper middle income",]
+```
+#Filter by countrie Malta
+```R
+stats[stats$Country.Code == "MLT",]
+```
+
+#Filter by countrie Qatar
+```R
+stats[stats$Country.Code == "QAT",]
+```
+#Filter by countrie Netherlands
+```R
+stats[stats$Country.Code == "NLD",]
+```
+
+#Filter by countrie Norway
+```R
+stats[stats$Country.Code == "NOR",]
+```
+
+
+
+
+
+
+
 ## Exam
 
 ```R

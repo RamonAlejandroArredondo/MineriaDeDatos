@@ -10,6 +10,7 @@ Table of contents
 - [Practice 1](#practice-1)
 - [Practice 2](#practice-2)
 - [Practice 3](#practice-3)
+- [Practice 5](#practice-3)
 - [Exam](#Exam)
 
 <div id='pr1' />
@@ -225,7 +226,7 @@ best.month
 worst.month
 ```
 
-#Practice 5 
+## Practice 5 
 ```R
 stats <- read.csv("Demographic-Data.csv")
 is.data.frame(stats)

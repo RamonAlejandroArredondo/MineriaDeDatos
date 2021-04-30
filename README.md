@@ -105,3 +105,47 @@ qplot(data = merged_2013, x =Fertility.Rate , y = Life.Expectancy.2013,
       color = Country.Name, size=I(3), shape=I(19), alpha =I(.4), 
       main = "Fertility for Life Expectancy group by Country 2013")
 ```   
+
+
+# Practice 1 Unit 2
+
+#load csv file (vgsale.csv) videogames sales. 
+```R
+data <- read.csv(choose.files()
+```
+## we check the correct content of our dataset
+```R
+head(data)
+```
+## we make use of the str function to verify the types of data that the dataset hosts
+```R
+str(data)
+ ```
+## Quick look at the content of the dataset to form some little statistics
+```R
+summary(data)
+```
+
+## We verify that our data is independent between columns with the following filter
+```R
+data[data$Platform == "NES",]
+```
+
+## we will use the ggplot 2 library to generate the plots
+```R
+library(ggplot2)
+```
+
+## We generate the first chart based on the years and global sales for each of them
+```R
+Grafica1 = ggplot(data, aes(Year, Global_Sales))
+Grafica1
+Grafica1 + geom_point()
+```
+
+## The following graph is a comparison between the sales of Japan per year 
+```R
+p2 <- ggplot( data, aes( x = as.numeric(JP_Sales ), y = Year ) )
+p2 <- p2 + scale_x_continuous( breaks = 1:4, labels = levels( data$JP_Sales ) )
+p2 <- p2 + geom_line( size = 1 )
+```

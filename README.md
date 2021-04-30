@@ -149,3 +149,35 @@ p2 <- ggplot( data, aes( x = as.numeric(JP_Sales ), y = Year ) )
 p2 <- p2 + scale_x_continuous( breaks = 1:4, labels = levels( data$JP_Sales ) )
 p2 <- p2 + geom_line( size = 1 )
 ```
+
+## The following graph shows statistics regarding the games that came out for each
+## regarding there genre
+```R
+s <- ggplot(data=data, aes(x=Year))
+s + geom_histogram(binwidth =12, aes(fill=Genre), color="Black")
+```
+
+```R
+?theme
+```
+
+## We enhance the use of the theme layer to make it look better and to add 
+## description labels and personalized fonts
+
+```R
+s + geom_histogram(binwidth =10, aes(fill=Genre), color="Black")+
+  xlab("Years") +
+  ylab("Number of games total") +
+  ggtitle("Videogames") +
+  theme(axis.title.x = element_text(color = "DarkGreen", size=15),
+        axis.title.y = element_text(color = "Red", size=15),
+        axis.text.x = element_text(size = 9),
+        axis.text.y = element_text(size = 9),
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 15),
+        legend.position = c(1,1),
+        legend.justification = c(1,1),
+        plot.title = element_text(color = "DarkBlue",
+                                  size = 25,
+                                  family = "Arial"))
+                                  ```

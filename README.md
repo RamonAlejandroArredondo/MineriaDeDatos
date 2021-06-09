@@ -306,3 +306,54 @@ Here we will use the classifier data, which was previously obtained from the tra
 plot(classifier)
 text(classifier, cex=0.6)
 ```
+
+## Practice 4
+
+
+
+## Practice 5
+### Random Forest Classification
+        
+>We import the dataset and assign it to our data variable to later take the dataset value
+```R
+data <- read.csv(choose.files())
+dataset = dayta
+dataset = dataset[3:5]
+```
+        
+>Encoding the target function as a factor
+```R
+  dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
+```
+>Our dataset is divided into training set and test set, in addition to installing the caTools library if necessary
+```R
+  library(caTools)
+  set.seed(123)
+  split = sample.split(dataset$Purchased, SplitRatio = 0.75)
+  training_set = subset(dataset, split == TRUE)
+  est_set = subset(dataset, split == FALSE)
+```
+        
+>Scale characteristic for our respective tests both training and test set.
+```R
+training_set[-3] = scale(training_set[-3])
+test_set[-3] = scale(test_set[-3])
+```
+ >Adaptation of Random Forest Classification to the training set       
+```R
+  library(randomForest)
+  set.seed(123)
+  classifier = randomForest(x = training_set[-3],
+  y = training_set$Purchased,
+  ntree =10)
+```
+        
+ >Prediction of test set results 
+ ```R
+        y_pred = predict(classifier, newdata = test_set[-3])
+        y_pred
+        
+        # Making the Confusion Matrix
+        cm = table(test_set[, 3], y_pred)
+        cm
+```

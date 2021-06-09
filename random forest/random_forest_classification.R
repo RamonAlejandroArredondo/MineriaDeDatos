@@ -73,3 +73,4 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 
 # Choosing the number of trees
 plot(classifier)
+

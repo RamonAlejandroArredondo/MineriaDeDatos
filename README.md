@@ -487,3 +487,46 @@ Choosing the number of trees
 ```R
 plot(classifier)
 ```
+# Evaluative Practice
+ Naive Bayes
+
+>We read our dataframe, in this case Social_Network Ads and in turn we create a dataset variable to assign our respective dataframe
+We select the columns of our interest that will be from 3 to 5
+```R
+data <- read.csv(choose.files())
+dataset = data
+dataset = dataset[3:5]
+```
+>From the dataset the Purchased column is obtained, it will contain values ​​of 1 and 0, which tells us if it is true or false, when working with Boolean it is easier to manipulate the column.
+```R
+dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
+```
+>We use the caTools library to implement a 123 seed, then we divide our dataset in two, tarining_set which contains the true values ​​and test_set which contains the false values.
+```R
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+```
+>We use the Scale function that what it does is center the values ​​of an array and scale them.
+```R
+training_set[-3] = scale(training_set[-3])
+test_set[-3] = scale(test_set[-3])
+```
+>The e1071 library contains a function called naiveBayes () that is useful for performing Bayes classification. The function can receive categorical data and contingency tables as input. Returns an object of class "naiveBayes". This object can be passed to predict () to predict results.
+```R
+install.packages("e1071")
+library(e1071)
+classifier = naiveBayes(formula = Purchased ~ .,
+                        data = training_set,
+                       type = 'C-classification',
+                        kernel = 'linear')
+naiveBayes
+```
+
+>Results prediction
+```R
+y_pred = predict(classifier, newdata = test_set[-3])
+y_pred
+```

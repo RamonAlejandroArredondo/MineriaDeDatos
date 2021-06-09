@@ -445,7 +445,7 @@ test_set[-3] = scale(test_set[-3])
         cm = table(test_set[, 3], y_pred)
         cm
 ```
-Visualising the Training set results
+Visualizing the Training set results
 
 ```R
 library(ElemStatLearn)
@@ -464,7 +464,7 @@ points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ```
 
-Visualising the Test set results
+Visualizing the Test set results
 
 ```R
 library(ElemStatLearn)
@@ -529,4 +529,52 @@ naiveBayes
 ```R
 y_pred = predict(classifier, newdata = test_set[-3])
 y_pred
+```
+We create the prediction of the Y axis, where we will obtain the purchases made as a result
+
+# Making the Confusion Matrix
+```R
+cm = table(test_set[, 3], y_pred)
+cm
+```
+In the confusion matrix, we have our real data and predictions, which in the end will give us the accuracy of the data.
+
+# Visualizing the Training set results
+```R
+library(ElemStatLearn)
+set = training_set
+X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set = expand.grid(X1, X2)
+colnames(grid_set) = c('Age', 'EstimatedSalary')
+y_grid = predict(classifier, newdata = grid_set)
+plot(set[, -3],
+     main = 'Naive Bayes (Training set)',
+     xlab = 'Age', ylab = 'Estimated Salary',
+     xlim = range(X1), ylim = range(X2))
+contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
+points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
+```
+The ElemStatLearn library is used, it's the one that helps us define the colors
+
+The points are obtained from grid_set, which is the background of the graph with red and green colors, but to better visualize the data, other points with other shades of green and red are added.
+
+In Test set there is less data, that is why there are fewer errors but there is still some data in red that went too far from the red zone. Lets view the results.
+
+# Visualizing the Test set results
+```R
+library(ElemStatLearn)
+set = test_set
+X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set = expand.grid(X1, X2)
+colnames(grid_set) = c('Age', 'EstimatedSalary')
+y_grid = predict(classifier, newdata = grid_set)
+plot(set[, -3], main = 'Naive Bayes (Test set)',
+     xlab = 'Age', ylab = 'Estimated Salary',
+     xlim = range(X1), ylim = range(X2))
+contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
+points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3')) 
 ```

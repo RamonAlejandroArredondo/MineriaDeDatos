@@ -116,6 +116,11 @@ At the end of the development, explain in detail what the model of K-Means group
 what were their observations in the visualization analysis of data.
 
 We have to indicate the path in which we are going to be working, which is where our csv file is
+```R
+getwd()
+setwd("C:/Users/alez1516/Desktop")
+getwd()
+```
 
 ```R
 dataset = read.csv('iris.csv')

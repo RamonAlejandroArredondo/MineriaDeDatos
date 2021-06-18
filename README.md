@@ -115,7 +115,7 @@ nce the grouping model is obtained, do the analysis of corresponding data displa
 At the end of the development, explain in detail what the model of K-Means group and 
 what were their observations in the visualization analysis of data.
 
-We have to indicate the path in which we are going to be working, which is where our csv file is
+>We have to indicate the path in which we are going to be working, which is where our csv file is
 ```R
 getwd()
 setwd("C:/Users/alez1516/Desktop")
@@ -127,7 +127,7 @@ dataset = read.csv('iris.csv')
 dataset = dataset[1:4]
 dataset
 ```
-We create the dataset with the data from iris.csv and we only select from column 1 to 4 because column 5 has string values
+>We create the dataset with the data from iris.csv and we only select from column 1 to 4 because column 5 has string values
 
 ```R
 set.seed(6)
@@ -135,7 +135,7 @@ wcss = vector()
                    
 for (i in 1:10) wcss[i] = sum(kmeans(dataset, i)$withinss)
 ```
-We implement the seed with the value of 6 and create the vector, wcss stands for "sum of the squares within each group", we create a for loop where i will go from 1 to 10, indicating the number of clusters, a Each vector is given the sum of wcss.
+>We implement the seed with the value of 6 and create the vector, wcss stands for "sum of the squares within each group", we create a for loop where i will go from 1 to 10, indicating the number of clusters, a Each vector is given the sum of wcss.
 
 ```R
 plot(1:10,
@@ -145,4 +145,52 @@ plot(1:10,
      xlab = 'Number of clusters',
      ylab = 'WCSS')
 ```
-We plot the Elbow method with the values of each cluster, the type refers to what is going to be plotted, l is linear, p is point, and b is both.
+>We plot the Elbow method with the values of each cluster, the type refers to what is going to be plotted, l is linear, p is point, and b is both.
+
+```R
+set.seed(29)
+kmeans = kmeans(x = dataset, centers = 3)
+y_kmeans = kmeans$cluster
+y_kmeans
+```
+>We generate the random numbers with set.seed
+
+>We create the variable kmeans, where it will be equal to our dataset and the centers that is the result of the elbow.
+
+
+```R
+library(cluster)
+```
+>load the cluster library
+
+```R
+clusplot(dataset,
+         y_kmeans,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of iris'),
+         xlab = 'Component Two',
+         ylab = 'Component One')
+```
+>In the clusplot, we will have our dataset, the result of y_kmeans, lines will be equal to zero.
+
+>shade: where if true, the ellipses will be shaded in relation to their density.
+
+>color: if true, each ellipse will have a different color.
+
+>labels: accepts only integer numbers, and is used to get an idea of the distances between ellipses.
+
+>plotchar: if true, the plot symbols differ for points belonging to different groups, in this case we will use false.
+
+>span: if true, then each group is represented by an ellipse with the smallest area containing all of its points.
+
+>Finally, in main, it is the main name of our graph, in xlab we have component two and in ylab we have component one
+
+
+
+>These two components explain 95.8 points of variability
+

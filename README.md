@@ -108,12 +108,6 @@ qplot(data = merged_2013, x =Fertility.Rate , y = Life.Expectancy.2013,
 
 ## Exam Unit 4
 
-For this exam we use the K-Means grouping method for the iris.csv file
-```R
-setwd("C:/")
-setwd("/home/alejandro/Data_Mining/Unit 4/Evaluation/")
-getwd()
-```
 We have to indicate the path in which we are going to be working, which is where our csv file is
 
 ```R
@@ -139,3 +133,4 @@ plot(1:10,
      xlab = 'Number of clusters',
      ylab = 'WCSS')
 ```
+We plot the Elbow method with the values of each cluster, the type refers to what is going to be plotted, l is linear, p is point, and b is both.

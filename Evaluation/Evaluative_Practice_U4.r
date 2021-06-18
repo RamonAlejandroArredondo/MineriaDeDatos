@@ -29,3 +29,24 @@ plot(1:10,
      main = paste('The Elbow Method'),
      xlab = 'Number of clusters',
      ylab = 'WCSS')
+
+set.seed(29)
+kmeans = kmeans(x = dataset, centers = 3)
+y_kmeans = kmeans$cluster
+
+
+y_kmeans
+
+library(cluster)
+
+clusplot(dataset,
+         y_kmeans,
+         lines = 0,
+         shade = TRUE,
+         color = TRUE,
+         labels = 2,
+         plotchar = FALSE,
+         span = TRUE,
+         main = paste('Clusters of iris'),
+         xlab = 'Component Two',
+         ylab = 'Component One')

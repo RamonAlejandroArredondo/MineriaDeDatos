@@ -108,6 +108,13 @@ qplot(data = merged_2013, x =Fertility.Rate , y = Life.Expectancy.2013,
 
 ## Exam Unit 4
 
+Implement the K-Means clustering model with the Iris.csv dataset that
+it is found at https://github.com/jcromerohdz/iris using the method k-means () in R. 
+
+nce the grouping model is obtained, do the analysis of corresponding data display.
+At the end of the development, explain in detail what the model of K-Means group and 
+what were their observations in the visualization analysis of data.
+
 We have to indicate the path in which we are going to be working, which is where our csv file is
 
 ```R

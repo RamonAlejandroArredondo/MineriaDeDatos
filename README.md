@@ -105,3 +105,37 @@ qplot(data = merged_2013, x =Fertility.Rate , y = Life.Expectancy.2013,
       color = Country.Name, size=I(3), shape=I(19), alpha =I(.4), 
       main = "Fertility for Life Expectancy group by Country 2013")
 ```   
+
+## Exam Unit 4
+
+For this exam we use the K-Means grouping method for the iris.csv file
+```R
+setwd("C:/")
+setwd("/home/alejandro/Data_Mining/Unit 4/Evaluation/")
+getwd()
+```
+We have to indicate the path in which we are going to be working, which is where our csv file is
+
+```R
+dataset = read.csv('iris.csv')
+dataset = dataset[1:4]
+dataset
+```
+We create the dataset with the data from iris.csv and we only select from column 1 to 4 because column 5 has string values
+
+```R
+set.seed(6)
+wcss = vector()
+                   
+for (i in 1:10) wcss[i] = sum(kmeans(dataset, i)$withinss)
+```
+We implement the seed with the value of 6 and create the vector, wcss stands for "sum of the squares within each group", we create a for loop where i will go from 1 to 10, indicating the number of clusters, a Each vector is given the sum of wcss.
+
+```R
+plot(1:10,
+     wcss,
+     type = 'b',
+     main = paste('The Elbow Method'),
+     xlab = 'Number of clusters',
+     ylab = 'WCSS')
+```
